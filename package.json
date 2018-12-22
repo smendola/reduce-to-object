@@ -1,6 +1,6 @@
 {
   "name": "reduce-to-object",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reduce an array to an object. Mixable into underscore.",
   "main": "reduceToObject.js",
   "scripts": {
