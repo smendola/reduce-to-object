@@ -6,7 +6,9 @@ The result of the operation is an object coalescing all these key/value pairs.
 
 This utility is intended for use in situation where there is some uniquely identifying property (which might be computed) for each element of the source array. For example, an array of objects where each object has an "id" property that is unique. `reduceToObject` does not support cases where multiple entries in the array map to the same key in the result; there are other utilities out there to handle those cases.  The advantage of `reduceToObject` in the case of unique mappings is that the results are `{key: value}` rather than `{key:[value]}`.
 
-The mapping function must return a single such pair. Behavior is undefined if the mapping function returns more than that.
+This is done by way of a "mapping function" that is iterated over each element of the array, and is expected to return a single name/value pair represeting that element in the final result. The final result is an object combining all the pairs produced in this way.
+
+The mapping function must return a single such pair (if at all). Behavior is undefined if the mapping function returns more than that.
 
 The mapping function _may_ return an empty object, or `undefined`, in which case the source element in the array will be "skipped", and not be represented in the reduced result.
 
